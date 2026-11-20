@@ -19,6 +19,7 @@ jobs:
           ZIP="VidGrab-GitHub-Actions-ready.zip"
           mkdir extracted
           unzip -q "$ZIP" -d extracted
+          rm -f extracted/.github/workflows/build-apk.yml
 
           if [ "$(find extracted -mindepth 1 -maxdepth 1 | wc -l)" -eq 1 ] && [ -d "$(find extracted -mindepth 1 -maxdepth 1 -type d)" ]; then
             cp -a extracted/*/. .
